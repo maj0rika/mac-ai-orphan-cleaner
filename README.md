@@ -7,8 +7,13 @@ It targets only orphan helper processes (`PPID=1`) that match known AI-related c
 - `Codex.app` and `Cursor.app`
 - crash handlers and update helpers
 - dev servers such as `vite`, `turbo`, and `esbuild`
-- browser automation helpers such as `agent-browser`
+- active browser automation controllers such as `agent-browser`
 - orphan `zsh` shells unless you explicitly opt in
+
+It also includes two conservative cleanup rules for common long-lived leftovers:
+
+- orphaned `Google Chrome for Testing` processes created under `agent-browser` temp profiles
+- `gitstatusd-darwin-arm64` processes whose parent shell has already become an orphaned `zsh`
 
 ## Why copy install
 

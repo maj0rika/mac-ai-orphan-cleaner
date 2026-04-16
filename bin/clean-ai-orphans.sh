@@ -42,7 +42,16 @@ matches_include() {
 }
 
 matches_exclude() {
-  printf '%s\n' "$1" | grep -Eqi '/applications/codex\.app/|/applications/cursor\.app/|crashpad_handler|shipit|vite|turbo|esbuild|agent-browser|google chrome for testing'
+  printf '%s\n' "$1" | grep -Eqi '/applications/codex\.app/|/applications/cursor\.app/|crashpad_handler|shipit|vite|turbo|esbuild|agent-browser'
+}
+
+matches_browser_testing_cleanup() {
+  printf '%s\n' "$1" | grep -Eqi 'agent-browser-chrome-' &&
+    printf '%s\n' "$1" | grep -Eqi '/google chrome for testing\.app/contents/macos/google chrome for testing([[:space:]]|$)'
+}
+
+parent_is_orphan_shell() {
+  printf '%s\n' "$ORPHAN_SHELL_PIDS" | grep -qx "$1"
 }
 
 shell_has_no_tty() {
@@ -85,18 +94,49 @@ touch "$LOG_FILE"
 
 log_line "scan start dry_run=${DRY_RUN} verbose=${VERBOSE} include_shells=${INCLUDE_SHELLS}"
 
+ORPHAN_SHELL_PIDS="$(
+  ps -ax -o pid= -o ppid= -o tty= -o command= | awk '
+    {
+      pid=$1
+      ppid=$2
+      tty=$3
+      cmd=$4
+      if (ppid == 1 && tty != "??" && cmd ~ /zsh$/) {
+        print pid
+      }
+    }
+  '
+)"
+
 candidate_count=0
 candidate_pids=()
 candidate_desc=()
 
 while IFS=$'\t' read -r pid ppid tty args; do
   [ -n "$pid" ] || continue
-  [ "$ppid" = "1" ] || continue
 
   exe_path="${args%% *}"
   exe_base="${exe_path##*/}"
   exe_name="$(to_lower "${exe_base#-}")"
   args_lc="$(to_lower "$args")"
+
+  if printf '%s\n' "$args_lc" | grep -Eqi 'gitstatusd-darwin-arm64'; then
+    if parent_is_orphan_shell "$ppid"; then
+      candidate_pids+=("$pid")
+      candidate_desc+=("type=gitstatusd tty=${tty:-none} cmd=$args")
+      candidate_count=$((candidate_count + 1))
+    fi
+    continue
+  fi
+
+  [ "$ppid" = "1" ] || continue
+
+  if matches_browser_testing_cleanup "$args_lc"; then
+    candidate_pids+=("$pid")
+    candidate_desc+=("type=browser-testing tty=${tty:-none} cmd=$args")
+    candidate_count=$((candidate_count + 1))
+    continue
+  fi
 
   if [ "$INCLUDE_SHELLS" -eq 1 ] && [ "$exe_name" = "zsh" ]; then
     if shell_has_no_tty "$tty" && [ "$(child_count "$pid")" = "0" ]; then
