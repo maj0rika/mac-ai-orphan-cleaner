@@ -15,6 +15,8 @@ It also includes two conservative cleanup rules for common long-lived leftovers:
 - orphaned `Google Chrome for Testing` processes created under `agent-browser` temp profiles
 - `gitstatusd-darwin-arm64` processes whose parent shell has already become an orphaned `zsh`
 
+If your Mac keeps slowing down because Chromium-based helper renderers accumulate over many hours, you can opt into a more aggressive profile.
+
 ## Why copy install
 
 This repo is designed for multiple Macs. The recommended flow is:
@@ -34,6 +36,12 @@ Copy install is more reliable than symlinks when you want the same setup across 
 git clone https://github.com/maj0rika/mac-ai-orphan-cleaner.git
 cd mac-ai-orphan-cleaner
 ./install.sh
+```
+
+Aggressive install:
+
+```bash
+./install.sh --aggressive
 ```
 
 After install, macOS will:
@@ -60,6 +68,16 @@ Opt-in shell cleanup mode:
 ```bash
 ~/bin/clean-ai-orphans.sh --dry-run --verbose --include-shells
 ```
+
+Aggressive dry run:
+
+```bash
+~/bin/clean-ai-orphans.sh --dry-run --verbose --aggressive
+```
+
+Aggressive mode currently adds:
+
+- long-lived low-CPU `Dia` `Browser Helper (Renderer)` processes with large resident memory
 
 ## Logs
 

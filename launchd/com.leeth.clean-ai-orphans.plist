@@ -10,6 +10,7 @@
     <string>/bin/zsh</string>
     <string>-lc</string>
     <string>__HOME__/bin/clean-ai-orphans.sh</string>
+__EXTRA_PROGRAM_ARGUMENTS__
   </array>
 
   <key>RunAtLoad</key>
