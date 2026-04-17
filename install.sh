@@ -30,19 +30,15 @@ cp "${ROOT_DIR}/bin/clean-ai-orphans.sh" "$TARGET_SCRIPT"
 chmod +x "$TARGET_SCRIPT"
 
 EXTRA_PROGRAM_ARGUMENTS=""
+SCRIPT_COMMAND="${HOME}/bin/clean-ai-orphans.sh"
 if [ "$AGGRESSIVE" -eq 1 ]; then
-  EXTRA_PROGRAM_ARGUMENTS='    <string>--aggressive</string>'
+  SCRIPT_COMMAND="${SCRIPT_COMMAND} --aggressive"
 fi
 
-awk -v home="$HOME" -v extra="$EXTRA_PROGRAM_ARGUMENTS" '
+awk -v home="$HOME" -v script_command="$SCRIPT_COMMAND" '
   {
     gsub("__HOME__", home)
-    if ($0 ~ /__EXTRA_PROGRAM_ARGUMENTS__/) {
-      if (extra != "") {
-        print extra
-      }
-      next
-    }
+    gsub("__SCRIPT_COMMAND__", script_command)
     print
   }
 ' "${ROOT_DIR}/launchd/com.leeth.clean-ai-orphans.plist" >"$TARGET_AGENT"

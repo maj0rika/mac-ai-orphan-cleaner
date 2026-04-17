@@ -9,8 +9,7 @@
   <array>
     <string>/bin/zsh</string>
     <string>-lc</string>
-    <string>__HOME__/bin/clean-ai-orphans.sh</string>
-__EXTRA_PROGRAM_ARGUMENTS__
+    <string>__SCRIPT_COMMAND__</string>
   </array>
 
   <key>RunAtLoad</key>
