@@ -1,0 +1,17 @@
+3000	1	0.1	50000	00:30:00	??	/Applications/Visual Studio Code.app/Contents/MacOS/Electron
+3101	3000	0.0	12000	00:50:00	??	node /Users/leetaehee/.serena/language_servers/static/TypeScriptLanguageServer/ts-lsp/node_modules/.bin/typescript-language-server --stdio
+3102	3000	0.0	12000	00:05:00	??	node /Users/leetaehee/.serena/language_servers/static/TypeScriptLanguageServer/ts-lsp/node_modules/.bin/typescript-language-server --stdio
+3103	3000	0.0	12000	00:04:00	??	node /Users/leetaehee/.serena/language_servers/static/TypeScriptLanguageServer/ts-lsp/node_modules/.bin/typescript-language-server --stdio
+3201	3000	0.0	12000	00:50:00	??	/opt/homebrew/Cellar/node/25.9.0_2/bin/node /Users/leetaehee/git/demo/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic
+3202	3000	0.0	12000	00:05:00	??	/opt/homebrew/Cellar/node/25.9.0_2/bin/node /Users/leetaehee/git/demo/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic
+3203	3000	0.0	12000	00:04:00	??	/opt/homebrew/Cellar/node/25.9.0_2/bin/node /Users/leetaehee/git/demo/node_modules/typescript/lib/tsserver.js --serverMode partialSemantic
+3301	3000	0.0	12000	00:50:00	??	npm exec @playwright/mcp@latest
+3302	3000	0.0	12000	00:05:00	??	npm exec @playwright/mcp@latest
+3303	3000	0.0	12000	00:04:00	??	npm exec @playwright/mcp@latest
+3400	1	0.0	42000	00:20:00	??	/Applications/Codex.app/Contents/Resources/codex app-server --analytics-default-enabled
+3401	3400	0.0	18000	00:50:00	??	npm exec @playwright/mcp@latest
+3402	3400	0.0	18000	00:05:00	??	npm exec @playwright/mcp@latest
+3403	3400	0.0	18000	00:04:00	??	npm exec @playwright/mcp@latest
+3501	3000	5.0	12000	00:50:00	??	/opt/homebrew/bin/uv tool uvx --from git+https://github.com/oraios/serena.git serena start-mcp-server
+3502	3000	0.0	12000	00:05:00	??	/opt/homebrew/bin/uv tool uvx --from git+https://github.com/oraios/serena.git serena start-mcp-server
+3503	3000	0.0	12000	00:04:00	??	/opt/homebrew/bin/uv tool uvx --from git+https://github.com/oraios/serena.git serena start-mcp-server

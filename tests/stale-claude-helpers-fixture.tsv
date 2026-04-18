@@ -1,0 +1,8 @@
+2000	1	0.1	50000	00:30:00	??	/Applications/Claude.app/Contents/MacOS/Claude
+2101	2000	0.0	12000	00:50:00	??	/Applications/Claude.app/Contents/Helpers/disclaimer /opt/homebrew/bin/node /Users/leetaehee/Library/Application Support/Claude/Claude Extensions/ant.dir.ant.anthropic.chrome-control/server/index.js
+2102	2000	0.0	12000	00:05:00	??	/Applications/Claude.app/Contents/Helpers/disclaimer /opt/homebrew/bin/node /Users/leetaehee/Library/Application Support/Claude/Claude Extensions/ant.dir.ant.anthropic.chrome-control/server/index.js
+2103	2000	0.0	12000	00:04:00	??	/Applications/Claude.app/Contents/Helpers/disclaimer /opt/homebrew/bin/node /Users/leetaehee/Library/Application Support/Claude/Claude Extensions/ant.dir.ant.anthropic.chrome-control/server/index.js
+2301	2000	0.0	9000	00:50:00	??	/Applications/Claude.app/Contents/Helpers/disclaimer /usr/bin/python3 -u /Users/leetaehee/.local/share/kmsg-mcp/kmsg-mcp.py
+2302	2000	0.0	9000	00:05:00	??	/Applications/Claude.app/Contents/Helpers/disclaimer /usr/bin/python3 -u /Users/leetaehee/.local/share/kmsg-mcp/kmsg-mcp.py
+2303	2000	0.0	9000	00:04:00	??	/Applications/Claude.app/Contents/Helpers/disclaimer /usr/bin/python3 -u /Users/leetaehee/.local/share/kmsg-mcp/kmsg-mcp.py
+2401	2000	0.0	20000	00:50:00	??	/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper --type=utility --utility-sub-type=node.mojom.NodeService

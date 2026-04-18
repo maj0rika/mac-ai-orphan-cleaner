@@ -1,0 +1,12 @@
+1000	1	0.0	42000	00:20:00	??	/Applications/Codex.app/Contents/Resources/codex app-server --analytics-default-enabled
+1101	1000	0.0	18000	00:40:00	??	node /opt/homebrew/lib/node_modules/oh-my-codex/dist/mcp/state-server.js
+1102	1000	0.0	18000	00:30:00	??	node /opt/homebrew/lib/node_modules/oh-my-codex/dist/mcp/state-server.js
+1103	1000	0.0	18000	00:05:00	??	node /opt/homebrew/lib/node_modules/oh-my-codex/dist/mcp/state-server.js
+1104	1000	0.0	18000	00:04:00	??	node /opt/homebrew/lib/node_modules/oh-my-codex/dist/mcp/state-server.js
+1201	1101	0.0	16000	00:39:00	??	node /Users/leetaehee/.npm/_npx/c35ab75beed40a3c/node_modules/.bin/context7-mcp
+1301	1000	0.0	18000	00:50:00	??	npm exec @upstash/context7-mcp@latest
+1302	1000	0.0	18000	00:03:00	??	npm exec @upstash/context7-mcp@latest
+1303	1000	0.0	18000	00:02:00	??	npm exec @upstash/context7-mcp@latest
+1401	1000	0.0	18000	00:50:00	??	node /Users/leetaehee/.codex/scripts/context-auto-compact-bridge.mjs
+1501	1	0.0	1000	00:10:00	ttys001	/bin/zsh -l
+1601	1501	0.0	528	00:10:00	ttys001	/Users/leetaehee/.cache/gitstatus/gitstatusd-darwin-arm64 -G v1.5.4 -s -1 -u -1 -d -1 -c -1 -m -1 -v FATAL -t 20
